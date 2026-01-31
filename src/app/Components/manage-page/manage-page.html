@@ -1,0 +1,42 @@
+<div class="manage-page">
+  <div class="expense-info">
+    <div class="expense-panel">
+      <h1>Today</h1>
+
+      <table class="expense-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let exp of expenses">
+            <td>{{ exp.category }}</td>
+            <td>{{ exp.title }}</td>
+            <td>{{ exp.amount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="expense-panel"></div>
+  </div>
+  <div class="options">
+    <i id="minus-option" (click)="openPopup('spend')" class="fa-solid fa-minus"></i>
+    <i id="plus-option" (click)="openPopup('earn')" class="fa-solid fa-plus"></i>
+  </div>
+</div>
+
+<div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup">
+    <h1 *ngIf="popupType === 'spend'">Record Expense</h1>
+    <h1 *ngIf="popupType === 'earn'">Record Earning</h1>
+
+    <div class="popup-actions">
+      <button (click)="closePopup()">Cancel</button>
+      <button class="primary">Confirm</button>
+    </div>
+  </div>
+</div>
