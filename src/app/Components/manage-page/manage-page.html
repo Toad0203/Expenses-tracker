@@ -29,7 +29,7 @@
   </div>
 </div>
 
-<div class="popup-overlay" *ngIf="showPopup">
+<!-- <div class="popup-overlay" *ngIf="showPopup">
   <div class="popup">
     <h1 *ngIf="popupType === 'spend'">Record Expense</h1>
     <h1 *ngIf="popupType === 'earn'">Record Earning</h1>
@@ -38,5 +38,38 @@
       <button (click)="closePopup()">Cancel</button>
       <button class="primary">Confirm</button>
     </div>
+  </div>
+
+  
+</div> -->
+
+<div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup">
+    <h1 *ngIf="popupType === 'spend'">Record Expense</h1>
+    <h1 *ngIf="popupType === 'earn'">Record Earning</h1>
+
+    <!-- FORM -->
+    <form class="popup-form" (ngSubmit)="submitForm()">
+      <label>
+        Category
+        <input data-cy="category-input" type="text" [(ngModel)]="formCategory" name="category" />
+      </label>
+
+      <label>
+        Title
+        <input data-cy="title-input" type="text" [(ngModel)]="formTitle" name="title" />
+      </label>
+
+      <label>
+        Amount
+        <input data-cy="amount-input" type="number" [(ngModel)]="formAmount" name="amount" />
+      </label>
+
+      <!-- BUTTONS INSIDE FORM -->
+      <div class="popup-actions">
+        <button data-cy="cancel-btn" type="button" (click)="closePopup()">Cancel</button>
+        <button data-cy="confirm-btn" type="submit" class="primary">Confirm</button>
+      </div>
+    </form>
   </div>
 </div>

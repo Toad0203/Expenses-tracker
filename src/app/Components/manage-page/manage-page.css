@@ -127,14 +127,21 @@
   color: white;
 }
 
-/* Small animation */
-/* @keyframes scaleIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-} */
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.popup-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.popup-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
