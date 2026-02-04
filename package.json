@@ -2,6 +2,9 @@
   "name": "my-angular-20-app",
   "version": "0.0.0",
   "scripts": {
+    "cypress:run": "cypress run",
+    "generate:report": "node generateLatestReport.js",
+    "test:email": "npm run cypress:run & npm run generate:report & node sendReport.js",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -32,6 +35,7 @@
     "@angular/router": "^20.3.0",
     "@angular/ssr": "^20.3.14",
     "express": "^5.1.0",
+    "nodemailer": "^7.0.13",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -51,6 +55,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.0",
+    "mochawesome-report-generator": "^6.3.2",
     "typescript": "~5.9.2"
   }
 }
