@@ -19,11 +19,11 @@ describe('Manage page spec', () => {
     cy.get('.popup').should('not.exist');
 
     cy.get('#minus-option').click();
-    cy.get('.popup').should('exist').should('contain', 'Record Expense');
+    cy.get('.popup').should('exist').should('contain', 'Decord Expense');
   });
 
   it('should show Record Earning popup when + is clicked', () => {
-    cy.get('.popup').should('not.exist');
+    cy.get('.popup').should('exist');
 
     cy.get('#plus-option').click();
     cy.get('.popup').should('exist').should('contain', 'Record Earning');

@@ -1,0 +1,251 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 5,
+    "pending": 0,
+    "failures": 3,
+    "start": "2026-02-05T06:39:39.535Z",
+    "end": "2026-02-05T06:39:58.140Z",
+    "duration": 18605,
+    "testsRegistered": 8,
+    "passPercent": 62.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "af4f25a9-8817-42b8-b0cc-de83dbb09728",
+      "title": "",
+      "fullFile": "cypress\\e2e\\manage_page.cy.ts",
+      "file": "cypress\\e2e\\manage_page.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a160401f-2e96-4961-b85f-0849160a68c9",
+          "title": "Manage page spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "loads the page",
+              "fullTitle": "Manage page spec loads the page",
+              "timedOut": null,
+              "duration": 1863,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "b8ff4d49-0f7b-4bea-9459-901d7382dc29",
+              "parentUUID": "a160401f-2e96-4961-b85f-0849160a68c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should go to Review page when Review is clicked",
+              "fullTitle": "Manage page spec should go to Review page when Review is clicked",
+              "timedOut": null,
+              "duration": 783,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.option').contains('Review').click();\ncy.url().should('contain', 'review');",
+              "err": {},
+              "uuid": "0c21f38d-fc26-4ac6-8df4-165d9f063fe7",
+              "parentUUID": "a160401f-2e96-4961-b85f-0849160a68c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should go to Personalize page when Personalize is clicked",
+              "fullTitle": "Manage page spec should go to Personalize page when Personalize is clicked",
+              "timedOut": null,
+              "duration": 534,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.option').contains('Personalize').click();\ncy.url().should('contain', 'personalize');",
+              "err": {},
+              "uuid": "08184142-23ae-406c-8311-d38056a74efc",
+              "parentUUID": "a160401f-2e96-4961-b85f-0849160a68c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show Record Expense popup when - is clicked",
+              "fullTitle": "Manage page spec should show Record Expense popup when - is clicked",
+              "timedOut": null,
+              "duration": 4636,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.popup').should('not.exist');\ncy.get('#minus-option').click();\ncy.get('.popup').should('exist').should('contain', 'Decord Expense');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.popup>' to contain 'Decord Expense'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.popup>' to contain 'Decord Expense'\n    at Context.eval (webpack://my-angular-20-app/./cypress/e2e/manage_page.cy.ts:22:37)",
+                "diff": null
+              },
+              "uuid": "76f8a033-4375-4367-9fec-6f22ba374fc1",
+              "parentUUID": "a160401f-2e96-4961-b85f-0849160a68c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show Record Earning popup when + is clicked",
+              "fullTitle": "Manage page spec should show Record Earning popup when + is clicked",
+              "timedOut": null,
+              "duration": 4368,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.popup').should('exist');\ncy.get('#plus-option').click();\ncy.get('.popup').should('exist').should('contain', 'Record Earning');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.popup`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.popup`, but never found it.\n    at Context.eval (webpack://my-angular-20-app/./cypress/e2e/manage_page.cy.ts:26:21)",
+                "diff": null
+              },
+              "uuid": "00954626-7814-4ee3-baac-c01e151c2c61",
+              "parentUUID": "a160401f-2e96-4961-b85f-0849160a68c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should submit expense details and show them",
+              "fullTitle": "Manage page spec should submit expense details and show them",
+              "timedOut": null,
+              "duration": 1157,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#minus-option').click();\ncy.get('.popup').should('exist').should('contain', 'Record Expense');\ncy.get('[data-cy=category-input]').type('Test Category');\ncy.get('[data-cy=title-input]').type('Test Title');\ncy.get('[data-cy=amount-input]').type('0');\ncy.get('[data-cy=confirm-btn]').click();\ncy.document().then(function (doc) {\n    var overlay = doc.querySelector('.popup-overlay');\n    console.log('popup-overlay exists?', !!overlay);\n});\ncy.get('.popup-overlay').should('not.exist');\ncy.contains('Test Category');\ncy.contains('Test Title');\ncy.contains('0');",
+              "err": {},
+              "uuid": "ca544ca4-cd3e-4dfe-be84-36db843a3b41",
+              "parentUUID": "a160401f-2e96-4961-b85f-0849160a68c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should remove popup when Cancel is clicked",
+              "fullTitle": "Manage page spec should remove popup when Cancel is clicked",
+              "timedOut": null,
+              "duration": 383,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#minus-option').click();\ncy.get('.popup').should('exist').should('contain', 'Record Expense');\ncy.get('[data-cy=cancel-btn]').click();\ncy.get('.popup').should('not.exist');",
+              "err": {},
+              "uuid": "0acd1e09-b6bb-4ac9-b3a0-2550de48cf75",
+              "parentUUID": "a160401f-2e96-4961-b85f-0849160a68c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show current month and year in Review page",
+              "fullTitle": "Manage page spec should show current month and year in Review page",
+              "timedOut": null,
+              "duration": 4474,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/review');\nvar date = new Date();\nvar month = date.toLocaleString('default', { month: 'long' });\nvar year = date.getFullYear();\nvar expectedText = \"\".concat(month, \" \").concat(year);\ncy.get('h1').should('contain', expectedText);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h1>' to contain 'February 2026'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h1>' to contain 'February 2026'\n    at Context.eval (webpack://my-angular-20-app/./cypress/e2e/manage_page.cy.ts:69:17)",
+                "diff": null
+              },
+              "uuid": "8b4e2da5-3c00-4355-97a5-ec94d5e3676d",
+              "parentUUID": "a160401f-2e96-4961-b85f-0849160a68c9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b8ff4d49-0f7b-4bea-9459-901d7382dc29",
+            "0c21f38d-fc26-4ac6-8df4-165d9f063fe7",
+            "08184142-23ae-406c-8311-d38056a74efc",
+            "ca544ca4-cd3e-4dfe-be84-36db843a3b41",
+            "0acd1e09-b6bb-4ac9-b3a0-2550de48cf75"
+          ],
+          "failures": [
+            "76f8a033-4375-4367-9fec-6f22ba374fc1",
+            "00954626-7814-4ee3-baac-c01e151c2c61",
+            "8b4e2da5-3c00-4355-97a5-ec94d5e3676d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18198,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
