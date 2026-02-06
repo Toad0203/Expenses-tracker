@@ -4,6 +4,7 @@ describe('Manage page spec', () => {
     cy.visit('/');
   });
 
+  
   // Test which checks that by clicking Review button, the site goes to Review page
   it('should go to Review page when Review is clicked', () => {
     // Finds the element in the page which has the class 'option' and clicks it
@@ -13,12 +14,16 @@ describe('Manage page spec', () => {
     cy.url().should('contain', 'review');
   });
 
+
+  
   // Similar to above test
   it('should go to Personalize page when Personalize is clicked', () => {
     cy.get('.option').contains('Personalize').click();
     cy.url().should('contain', 'personalize');
   });
 
+
+  
   // Test which checks that popup appears when - button is clicked
   it('should show Record Expense popup when - is clicked', () => {
     // Checks that popup should not exist initially
@@ -31,6 +36,8 @@ describe('Manage page spec', () => {
     cy.get('.popup').should('exist').should('contain', 'Record Expense');
   });
 
+
+  
   // Similar to above test
   it('should show Record Earning popup when + is clicked', () => {
     // Checks that popup should exist initially (this will fail)
@@ -40,6 +47,8 @@ describe('Manage page spec', () => {
     cy.get('.popup').should('exist').should('contain', 'Record Earning');
   });
 
+
+  
   // Test which checks that when the popup form is submitted, the given details show up in the page
   it('should submit expense details and show them', () => {
     cy.get('#minus-option').click();
@@ -64,6 +73,8 @@ describe('Manage page spec', () => {
     cy.contains('0');
   });
 
+
+  
   // Test which checks that popup should go away when Cancel button is clicked
   it('should remove popup when Cancel is clicked', () => {
     cy.get('#minus-option').click();
@@ -73,6 +84,8 @@ describe('Manage page spec', () => {
     cy.get('.popup').should('not.exist');
   });
 
+
+  
   // Test which checks that the month and year in the page match the current ones (this will fail as the month and year in the page are hard coded)
   it('should show current month and year in Review page', () => {
     // Go to baseurl/review => http://localhost:4200/review
