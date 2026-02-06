@@ -73,7 +73,7 @@ describe('Manage page spec', () => {
     cy.get('.popup').should('not.exist');
   });
 
-  // Test which checks that the month and year in the page match the current ones
+  // Test which checks that the month and year in the page match the current ones (this will fail as the month and year in the page are hard coded)
   it('should show current month and year in Review page', () => {
     // Go to baseurl/review => http://localhost:4200/review
     cy.visit('/review');
